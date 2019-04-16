@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+
+  <title>Smart House</title>
+  </head>
+  <body>
+
+       <h1><a>Умный дом</a></h1>
+  	<div id="content">
+       <h2><a id="color" class="text-success">Свет</a></h2>
+       <div  class="text-center" role="group" aria-label="..." >
+         <button id="btnOn" type="button" class="btn btn-default" disabled>Включить</button>
+         <button id="btnOff" type="button" class="btn btn-default">Выключить</button>
+      </div>
+      <h2><a>Температура</a></h2>
+      <button id="btnTemp" type="button" class="btn btn-default">Обновить</button>
+      <p id="temper" class="text-center"></p>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+  <script>
+    $('#btnOn').click(function() {
+      $.ajax({
+        url: 'enable.php',
+        method: 'GET'
+      })
+      .done(function(message) {
+        $('#color').addClass('text-success')
+                  .removeClass('text-danger');
+        $('#btnOn').prop('disabled', true);
+        $('#btnOff').prop('disabled', false);
+        //alert(message);
+      });
+    });
+
+    $('#btnOff').click(function() {
+      $.ajax({
+        url: 'disable.php',
+        method: 'GET'
+      })
+      .done(function(message) {
+        $('#color').addClass('text-danger')
+                  .removeClass('text-success');
+        $('#btnOn').prop('disabled', false);
+        $('#btnOff').prop('disabled', true);
+        //alert(message);
+      });
+    });
+
+    $('#btnTemp').click(function() {
+      $.ajax({
+        url: 'temper.php',
+        method: 'GET'
+      })
+      .done(function(message) {
+        $('#temper').html(message);
+      });
+    });
+  </script>
+  </body>
+</html>

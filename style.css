@@ -1,0 +1,32 @@
+﻿a:hover {
+  color: #ffd6c2;
+  position: relative;
+}
+a[title] {
+  color: #ffd6c2;
+  text-decoration: none;
+}
+
+html {
+        background: url(images/fon.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+
+}
+
+h1{text-align: center}
+h2{text-align: center}
+body {
+  text-align: center;
+  padding-top: 50px;
+	padding-bottom: 50px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+p{
+
+}
