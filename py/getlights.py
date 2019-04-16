@@ -1,3 +1,3 @@
-with open('E:/lights.txt') as fr:
+with open('./sensors/lights.txt') as fr:
       for line in fr:
         print(line)
