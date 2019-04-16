@@ -1,4 +1,4 @@
 <?php
-  echo shell_exec('./py/gettemp.py');
+  echo shell_exec('python ./py/gettemp.py');
   //echo rand(0, 40);
  ?>

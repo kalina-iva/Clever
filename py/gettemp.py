@@ -1,5 +1,6 @@
 # get temperature
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
+from EmulatorGUI import GPIO
 import time
 
 # setup pins

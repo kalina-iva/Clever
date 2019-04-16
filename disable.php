@@ -1,4 +1,4 @@
 <?php
-  shell_exec("sudo ./py/lightsoff.py");
+  shell_exec("python ./py/lightsoff.py");
   echo "Лампочка выключена";
  ?>

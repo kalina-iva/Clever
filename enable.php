@@ -1,4 +1,4 @@
 <?php
-  shell_exec("sudo ./py/lightson.py");
+  shell_exec("python ./py/lightson.py");
   echo "Лампочка включена";
  ?>
